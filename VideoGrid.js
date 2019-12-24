@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Image, Dimensions, Modal, TouchableOpacity } from "react-native";
 import * as _ from "lodash";
-import { Video } from "expo";
+import { Video } from "expo-av";
 
 export default class VideoGrid extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import BottomNavigation, {
-  ShiftingTab
+  FullTab
 } from "react-native-material-bottom-navigation";
 import { Entypo } from "@expo/vector-icons";
 import FaceScreen from "./FaceScreen.js";
@@ -10,23 +10,23 @@ import InstagramScreen from "./InstagramScreen";
 export default class SocialActivityScreen extends React.Component {
   tabs = [
     {
-      key: "Facebook",
-      label: "Facebook",
+      key: "Photos",
+      label: "Photos",
       barColor: "#4267b2",
       pressColor: "rgba(255, 255, 255, 0.16)",
       icon: "facebook"
     },
 
     {
-      key: "Instagram",
-      label: "Instagram",
+      key: "Videos",
+      label: "Videos",
       barColor: "#231F20",
       pressColor: "rgba(255, 255, 255, 0.16)",
       icon: "instagram"
     },
     {
-      key: "Twitter",
-      label: "Twitter",
+      key: "Conversation",
+      label: "Conversation",
       barColor: "#38A1F3",
       pressColor: "rgba(255, 255, 255, 0.16)",
       icon: "twitter"
@@ -42,7 +42,7 @@ export default class SocialActivityScreen extends React.Component {
   );
 
   renderTab = ({ tab, isActive }) => (
-    <ShiftingTab
+    <FullTab
       isActive={isActive}
       key={tab.key}
       label={tab.label}
@@ -54,9 +54,9 @@ export default class SocialActivityScreen extends React.Component {
     return (
       <View style={{ flex: 1, backgroundColor: "white" }}>
         <View style={{ flex: 1, justifyContent: "flex-end" }}>
-          {this.state.activeTab === "Facebook" ? (
+          {this.state.activeTab === "Photos" ? (
             <FaceScreen />
-          ) : this.state.activeTab === "Twitter" ? (
+          ) : this.state.activeTab === "Conversation" ? (
             <TweetScreen />
           ) : (
             <InstagramScreen />
